@@ -28,6 +28,7 @@ gem 'pry-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'pg'
+gem 'newrelic_rpm'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
