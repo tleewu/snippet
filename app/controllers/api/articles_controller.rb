@@ -2,8 +2,8 @@ class Api::ArticlesController < ApplicationController
 
   def create
     # saves an article to the specific user, no annotations yet.
-    url = article_params[:url]
-    id = article_params[:user_id].to_i
+    url = params[:url]
+    id = params[:user_id].to_i
     # user = User.find_by_session_token(article_params[:session_token])
     @article = Article.new({url: url, user_id: id})
     if @article.save
@@ -11,12 +11,5 @@ class Api::ArticlesController < ApplicationController
     else
       render json: {errors: @article.errors.full_messages}
     end
-  end
-
-
-  private
-
-  def article_params
-    params.require(:article).permit(:url, :user_id)
   end
 end
