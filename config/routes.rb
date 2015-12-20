@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     resources :articles, only: [:create]
     # resources :annotations, only: [:create]
   end
+
+  root to: 'static_pages#index'
 end
