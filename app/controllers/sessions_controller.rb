@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :ensure_not_logged_in, only: [:new, :create]
+
   def new
     @user = User.new
   end
@@ -17,6 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout(current_user)
+    redirect_to root_path
     # render json: {}
   end
 
