@@ -22,9 +22,7 @@ class ApplicationController < ActionController::Base
   end
 
   def ensure_not_logged_in
-    if session[:session_token]
-      redirect_to root_path
-    end
+    redirect_to root_path if session[:session_token]
   end
 
   protected
