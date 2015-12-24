@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :articles, only: [:create]
+    resources :annotations, only: [:create]
     # resources :annotations, only: [:create]
   end
 
