@@ -1,7 +1,7 @@
 class Api::AnnotationsController < ApplicationController
 
   def create
-    user_id = @current_user.id
+    user_id = current_user.id
     current_article = Article.find_by_url_and_user_id({url: annotation_params[:url], user_id: user_id})
     unless current_article
       current_article = Article.create!({user_id: user_id, url: url})
